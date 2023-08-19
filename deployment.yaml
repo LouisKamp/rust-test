@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-rust-app-slim
+  labels:
+    app: my-rust-app-slim
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-rust-app-slim
+  template:
+    metadata:
+      labels:
+        app: my-rust-app-slim
+    spec:
+      containers:
+        - name: my-rust-app-slim
+          image: louiskamp/my-rust-app-slim
+          env:
+            - name: RUST_LOG
+              value: "trace"
+          ports:
+            - containerPort: 3000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-rust-app-slim-service
+spec:
+  type: NodePort
+  selector:
+    app: my-rust-app-slim
+  ports:
+    - port: 8080
+      targetPort: 3000
