@@ -7,8 +7,8 @@ clone:
 
 steps:
   - name: clone
-    image: busybox
+    image: alpine/git
     commands:
-      - ping github.com
+      - cat /etc/resolv.conf
       # - git clone https://github.com/LouisKamp/rust-test
       # - git checkout $DRONE_COMMIT
