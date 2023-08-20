@@ -9,6 +9,6 @@ steps:
   - name: clone
     image: busybox
     commands:
-      - curl https://github.com
+      - ping https://github.com
       # - git clone https://github.com/LouisKamp/rust-test
       # - git checkout $DRONE_COMMIT
