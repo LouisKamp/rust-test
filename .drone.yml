@@ -7,7 +7,7 @@ clone:
 
 steps:
   - name: clone
-    image: alpine/git
+    image: busybox
     commands:
       - git clone https://github.com/LouisKamp/rust-test
       - git checkout $DRONE_COMMIT
