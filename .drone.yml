@@ -2,14 +2,12 @@ kind: pipeline
 type: kubernetes
 name: default
 
-# clone:
-#   disable: false
+clone:
+  disable: true
 
 steps:
-  - name: test
-    image: alpine/git
+  - name: clone
+    image: bitnami/git:latest
     commands:
-      - cat /etc/resolv.conf
-      # - ping google.com
-      # - git clone https://github.com/LouisKamp/rust-test
-      # - git checkout $DRONE_COMMIT
+      - git clone https://github.com/LouisKamp/rust-test
+      - git checkout $DRONE_COMMIT
