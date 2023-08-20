@@ -2,12 +2,13 @@ kind: pipeline
 type: kubernetes
 name: default
 
-clone:
-  disable: true
+# clone:
+#   disable: true
 
 steps:
-  - name: clone
+  - name: test
     image: bitnami/git:latest
     commands:
-      - git clone https://github.com/LouisKamp/rust-test
-      - git checkout $DRONE_COMMIT
+      - echo "hej"
+      # - git clone https://github.com/LouisKamp/rust-test
+      # - git checkout $DRONE_COMMIT
