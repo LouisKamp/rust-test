@@ -2,14 +2,14 @@ kind: pipeline
 type: kubernetes
 name: default
 
-clone:
-  disable: true
+# clone:
+#   disable: false
 
 steps:
-  - name: clone
+  - name: test
     image: alpine/git
     commands:
       - cat /etc/resolv.conf
-      - ping google.com
+      # - ping google.com
       # - git clone https://github.com/LouisKamp/rust-test
       # - git checkout $DRONE_COMMIT
