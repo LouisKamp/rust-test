@@ -6,7 +6,8 @@ clone:
   disable: true
 
 steps:
-  - name: test
-    image: rust:1.67-slim
+  - name: clone
+    image: alpine/git
     commands:
-      - curl http://google.com
+      - git clone https://github.com/LouisKamp/rust-test
+      - git checkout $DRONE_COMMIT
