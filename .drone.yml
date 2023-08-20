@@ -10,6 +10,6 @@ steps:
     image: alpine/git
     commands:
       - cat /etc/resolv.conf
-      - ping github.com
+      - ping google.com
       # - git clone https://github.com/LouisKamp/rust-test
       # - git checkout $DRONE_COMMIT
